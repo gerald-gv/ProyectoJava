@@ -56,6 +56,12 @@ public class Tienda extends JFrame implements ActionListener {
 	public static int cantidadOptima = 30; 
 	// Cuota diaria 
 	public static double cuotaDiaria = 75000;
+	// Recopilacion de datos de Cantidad de Ventas
+     // Cantidad de unidades vendidas por modelo
+    public static int[] unidadesVendidas = new int[5];
+
+     // Total de ventas por modelo
+    public static double[] totalVentasPorModelo = new double[5];
 	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -131,9 +137,11 @@ public class Tienda extends JFrame implements ActionListener {
 		menuTienda.add(mnVentas);
 		
 		mntmVender = new JMenuItem("Vender");
+		mntmVender.addActionListener(this);
 		mnVentas.add(mntmVender);
 		
 		mntmReportes = new JMenuItem("Generar Reportes");
+		mntmReportes.addActionListener(this);
 		mnVentas.add(mntmReportes);
 		
 		mnConfiguracion = new JMenu("Configuracion");
@@ -163,6 +171,12 @@ public class Tienda extends JFrame implements ActionListener {
 		contentPane.setLayout(null);
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmReportes) {
+			actionPerformedMntmReportes(e);
+		}
+		if (e.getSource() == mntmVender) {
+			actionPerformedMntmVender(e);
+		}
 		if (e.getSource() == mntmListar) {
 			actionPerformedMntmListar(e);
 		}
@@ -195,6 +209,18 @@ public class Tienda extends JFrame implements ActionListener {
 	//MANTENIMIENTO||LISTAR REFRIGERADORA
 	protected void actionPerformedMntmListar(ActionEvent e) {
 		ListadoRefrigeradoras dc = new ListadoRefrigeradoras();
+		dc.setLocationRelativeTo(this);
+		dc.setVisible(true);
+	}
+	//VENTAS||VENDER
+	protected void actionPerformedMntmVender(ActionEvent e) {
+		VentasVender dc = new VentasVender();
+		dc.setLocationRelativeTo(this);
+		dc.setVisible(true);
+	}
+	//VENTAS || GENERAR REPORTES
+	protected void actionPerformedMntmReportes(ActionEvent e) {
+		VentasReportes dc = new VentasReportes();
 		dc.setLocationRelativeTo(this);
 		dc.setVisible(true);
 	}

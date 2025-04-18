@@ -62,17 +62,6 @@ public class ListadoRefrigeradoras extends JDialog implements ActionListener {
 		btnListar.setBounds(275, 272, 89, 23);
 		getContentPane().add(btnListar);
 	}
-	//CLASE PARA AGRUPAR LOS DATOS
-	public static class Tienda {
-		public static String[] modelos = {
-			"LG LTCS20020W", "Samsung RB195ACRS", "Whirlpool WRT318FZDM", "Bosch B36BT930NS", "LG LSXS26366S"
-		};
-		
-		public static double[] precios = {949.0, 1089.0, 850.0, 629.0, 849.0};
-		public static double[] ancho = {60.0, 80.0, 60.0, 61.6, 75.4};
-		public static double[] alto = {91.0, 94.0, 90.0, 95.0, 94.5};
-		public static double[] fondo = {58.6, 67.5, 50.0, 51.5, 66.0};
-	}
 	//BOTON CERRAR
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnCerrar) {
@@ -84,17 +73,38 @@ public class ListadoRefrigeradoras extends JDialog implements ActionListener {
 	}
 	//BOTON LISTAR
 	protected void actionPerformedBtnListar(ActionEvent e) {
-
 		txtS.setText("LISTADO DE REFRIGERADORAS\n\n"); // Limpia el área
-		for (int i = 0; i < Tienda.modelos.length; i++) {
-			txtS.append(String.format("Modelo        : %s%n" , Tienda.modelos[i] , "\n"));
-			txtS.append(String.format("Precio (S/.)  : %.2f%n" , Tienda.precios[i] , "\n"));
-			txtS.append(String.format("Ancho         : %.1f cm%n" , Tienda.ancho[i] , " cm\n"));
-			txtS.append(String.format("Alto          : %.1f cm%n" , Tienda.alto[i] , " cm\n"));
-			txtS.append(String.format("Fondo         : %.1f cm%n" , Tienda.fondo[i] , " cm\n"));
-			txtS.append("-----------------------------------------------------\n");
-			
-		}
+
+		txtS.append(String.format("Modelo        : %s%n" , Tienda.modelo0 , "\n"));
+		txtS.append(String.format("Precio (S/.)  : %.2f%n" , Tienda.precio0 , "\n"));
+		txtS.append(String.format("Ancho         : %.1f cm%n" , Tienda.ancho0 , " cm\n"));
+		txtS.append(String.format("Alto          : %.1f cm%n" , Tienda.alto0 , " cm\n"));
+		txtS.append(String.format("Fondo         : %.1f cm%n" , Tienda.fondo0 , " cm\n"));
+		txtS.append("-----------------------------------------------------\n");
+		txtS.append(String.format("Modelo        : %s%n" , Tienda.modelo1 , "\n"));
+		txtS.append(String.format("Precio (S/.)  : %.2f%n" , Tienda.precio1 , "\n"));
+		txtS.append(String.format("Ancho         : %.1f cm%n" , Tienda.ancho1 , " cm\n"));
+		txtS.append(String.format("Alto          : %.1f cm%n" , Tienda.alto1 , " cm\n"));
+		txtS.append(String.format("Fondo         : %.1f cm%n" , Tienda.fondo1 , " cm\n"));
+		txtS.append("-----------------------------------------------------\n");
+		txtS.append(String.format("Modelo        : %s%n" , Tienda.modelo2 , "\n"));
+		txtS.append(String.format("Precio (S/.)  : %.2f%n" , Tienda.precio2 , "\n"));
+		txtS.append(String.format("Ancho         : %.1f cm%n" , Tienda.ancho2 , " cm\n"));
+		txtS.append(String.format("Alto          : %.1f cm%n" , Tienda.alto2 , " cm\n"));
+		txtS.append(String.format("Fondo         : %.1f cm%n" , Tienda.fondo2 , " cm\n"));
+		txtS.append("-----------------------------------------------------\n");
+		txtS.append(String.format("Modelo        : %s%n" , Tienda.modelo3 , "\n"));
+		txtS.append(String.format("Precio (S/.)  : %.2f%n" , Tienda.precio3 , "\n"));
+		txtS.append(String.format("Ancho         : %.1f cm%n" , Tienda.ancho3 , " cm\n"));
+		txtS.append(String.format("Alto          : %.1f cm%n" , Tienda.alto3 , " cm\n"));
+		txtS.append(String.format("Fondo         : %.1f cm%n" , Tienda.fondo3 , " cm\n"));
+		txtS.append("-----------------------------------------------------\n");
+		txtS.append(String.format("Modelo        : %s%n" , Tienda.modelo4 , "\n"));
+		txtS.append(String.format("Precio (S/.)  : %.2f%n" , Tienda.precio4 , "\n"));
+		txtS.append(String.format("Ancho         : %.1f cm%n" , Tienda.ancho4 , " cm\n"));
+		txtS.append(String.format("Alto          : %.1f cm%n" , Tienda.alto4 , " cm\n"));
+		txtS.append(String.format("Fondo         : %.1f cm%n" , Tienda.fondo4 , " cm\n"));
+		txtS.append("-----------------------------------------------------\n");
 	}
 	//BOTON CERRAR
 	protected void actionPerformedBtnCerrar(ActionEvent e) {
